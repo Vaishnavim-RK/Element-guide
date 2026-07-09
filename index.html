@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Element Guide </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo"> ⚛️ Element Guide </div>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu">☰</button>
+    </header>
+
+    <!--Navigation -->
+    <nav id="sideMenu" class="side-menu">
+        <a href="#" onclick="showSection('home')">🏠 Home</a>
+        <a href="#" onclick="showSection('table')">📊 Periodic Table</a>
+        <a href="#" onclick="showSection('comparison')">⚖️ Compare</a>
+        <a href="#" onclick="showSection('learnmore')">📚 Learn More</a>
+    </nav>
+
+    <!-- Search & Filter-->
+    <div class="search-filter">
+        <input type="text" id="searchInput" placeholder="Search (name/symbol/number)">
+        <button id="searchBtn">🔍 Search</button>
+        <select id="filterSelect">
+            <option value="all">All elements</option>
+            <option value="metal"> Metals</option>
+            <option value="nonmetal"> Nonmetals</option>
+            <option value="gas"> Gases</option>
+            <option value="Noble Gas"> Noble Gases</option>
+            <option value="halogen"> Halogens</option>
+            <option value="lanthanide"> Lanthanides</option>
+            <option value="actinide">Actinides</option>
+            <option value="metalloid">Metalloids</option>
+        </select>
+    </div>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="home-content">
+                <h1> ✨Welcome to the Clickable Periodic Table</h1>
+                <div class="info-card">
+                    <h2>🔬 The Periodic Table of Elements</h2>
+                    <p>The periodic table is a systematic arrangement of all known chemical elements based on their atomic properties. It helps scientists and students understand the relationship between different elements.</p>
+                    <p>In 1869, the Russian chemist <b>Dmitri Mendeleev</b> proposed the first successful periodic table. He arranged elements in increasing order of atomic mass and noticed that elements with similar properties appeared at regular intervals – this is the <b>Periodic Law</b>.</p>
+                    <p>Later, <b>Henry Moseley</b> improved the table by arranging elements according to their <b>atomic number</b>, which is the modern basis used today.</p>
+                    <p>The table is divided into <b>periods (rows)</b> and <b>groups (columns)</b>. Elements in the same group share similar chemical behavior.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Periodic Table Section -->
+        <section id="table" class="section">
+            <div class="table-container">
+            <div id="periodicTable" class="periodic-table"></div>
+            </div>
+        </section>
+
+        <!-- Comparison Section -->
+        <section id="comparison" class="section">
+            <h2>🔍 Compare Elements</h2>
+            <p>Select number of elements to compare:</p>
+            <label for="compareCount">Elements:</label>
+            <select id="compareCount">
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4" selected>4</option>
+            </select>
+            <label for="propertyoption">Options:</label>
+            <select id="compareoption">
+                <option value="bp">bp</option>
+                <option value="mp">mp</option>
+                <option value="electronegativity" selected>en</option>
+            </select>
+            <button id="createCompareBtn" class="compare-btn">Next ➔</button>
+            <div id="compareInputs"></div>
+            <div id="compareCards"></div>
+        </section>
+
+        <!-- Learn More Section -->
+        <section id="learnmore" class="section">
+            <h2>📘 LEARN MORE ABOUT THE PERIODIC TABLE</h2>
+            <p>Elements are the basic building blocks of everything — from the air you breathe to the stars in the sky. Below are trusted websites where you can explore the history, discovery, and science of elements.</p>
+            <ul>
+                <li><a href="https://www.britannica.com/science/chemical-element" target="_blank">Britannica: Chemical Element</a></li>
+                <li><a href="https://www.britannica.com/story/when-was-the-periodic-table-invented" target="_blank">Britannica: When was the Periodic Table invented?</a></li>
+                <li><a href="https://en.wikipedia.org/wiki/History_of_the_periodic_table" target="_blank">Wikipedia: History of the Periodic Table</a></li>
+                <li><a href="https://www.britannica.com/science/periodic-table" target="_blank">Britannica: Periodic Table</a></li>
+                <li><a href="https://astronoo.com/en/elements/periodic-table-of-chemical-elements.html" target="_blank">Astronoo: Periodic Table</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p> 2026 Element Guide | Educational website</p>
+    </footer>
+
+    <!-- Info Panel-->
+    <div id="infoPanel" class="info-panel">
+        <button id="closePanel">✖ Close</button>
+        <h2 id="infoName">Element</h2>
+        <div id="infoDetails"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
